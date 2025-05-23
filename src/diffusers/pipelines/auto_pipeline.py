@@ -105,6 +105,7 @@ from .stable_diffusion_xl import (
     StableDiffusionXLImg2ImgPipeline,
     StableDiffusionXLInpaintPipeline,
     StableDiffusionXLPipeline,
+    SDXLonePipeline, # Added SDXLonePipeline
 )
 from .wuerstchen import WuerstchenCombinedPipeline, WuerstchenDecoderPipeline
 
@@ -113,6 +114,7 @@ AUTO_TEXT2IMAGE_PIPELINES_MAPPING = OrderedDict(
     [
         ("stable-diffusion", StableDiffusionPipeline),
         ("stable-diffusion-xl", StableDiffusionXLPipeline),
+        ("stable-diffusion-xl-one-encoder", SDXLonePipeline), # Added SDXLonePipeline
         ("stable-diffusion-3", StableDiffusion3Pipeline),
         ("stable-diffusion-3-pag", StableDiffusion3PAGPipeline),
         ("if", IFPipeline),

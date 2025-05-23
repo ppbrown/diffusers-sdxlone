@@ -246,8 +246,11 @@ else:
             "RePaintPipeline",
             "ScoreSdeVePipeline",
             "StableDiffusionMixin",
+            # SDXLonePipeline will be accessible via from .pipelines import SDXLonePipeline
+            # and subsequently from diffusers import SDXLonePipeline if pipelines is correctly updated
         ]
     )
+    _import_structure["pipelines"].append("SDXLonePipeline") # Add SDXLonePipeline here
     _import_structure["quantizers"] = ["DiffusersQuantizer"]
     _import_structure["schedulers"].extend(
         [
@@ -851,6 +854,7 @@ if TYPE_CHECKING or DIFFUSERS_SLOW_IMPORT:
             RePaintPipeline,
             ScoreSdeVePipeline,
             StableDiffusionMixin,
+            "SDXLonePipeline", # Add SDXLonePipeline here
         )
         from .quantizers import DiffusersQuantizer
         from .schedulers import (
@@ -1113,6 +1117,7 @@ if TYPE_CHECKING or DIFFUSERS_SLOW_IMPORT:
             WuerstchenCombinedPipeline,
             WuerstchenDecoderPipeline,
             WuerstchenPriorPipeline,
+            # SDXLonePipeline is already included via the main .pipelines import
         )
 
     try:
